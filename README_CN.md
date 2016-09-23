@@ -10,11 +10,11 @@ PT-Cracker的目标就是提高你PT账户的上传量，它利用了从某一�
 
 ## 如何使用
 
-1. 从Github Release上下载 [ptcracker.jar]()
+1. 从Github Release上下载 [ptcracker.jar](https://github.com/hoverwinter/ptcracker/releases/download/v0.1.0/ptcracker.jar)
 
 2. 从PT站点下载torrent文件，保存在任一目录（或者当前目录下torrents子目录)
 
-3. 修改配置项中`torrentsDir`为该目录路径（或者使用默认配置）
+3. 修改配置文件[ptcracker.config](https://github.com/hoverwinter/ptcracker/releases/download/v0.1.0/ptcracker.config)中`torrentsDir`为该目录路径（或者使用默认配置）
 
 4. 使用以下命令执行：
 
@@ -22,13 +22,13 @@ PT-Cracker的目标就是提高你PT账户的上传量，它利用了从某一�
 
 注意，运行环境需要JRE-1.7或者更高版本的JRE。
 
-命令行参数`config_file`是可选的，如果未给定，PT－Cracker将从当前目录查找`ptcracker.config`。并且程序的日志将会打印在标准输出和当前目录的`ptcracker.log`文件中。
+命令行参数`config_file`是可选的，如果未给定，PT－Cracker将从当前目录查找`ptcracker.config`。默认的`torrentsDir`目录是当前目录下的`torrents`子目录。
 
-默认的`torrentsDir`目录是当前目录下的`torrents`子目录。
+程序的日志将会打印在标准输出和当前目录的`ptcracker.log`文件中。
 
 ## 配置
 
-PT-Cracker在`maxRate`和`minRate` (KB/s)之间随机选择一个速度，每隔`interval`秒发送一次包含按照这个速度这段时间的上传量。为了做特定资源的欺骗，所以需要从PT网站上下载`.torrent`文件，将下载的文件放到｀torrentsDir`目录下。当该目录下有超过10个文件时随机选择10个文件使用。
+配置文件参考 [ptcracker.config](https://github.com/hoverwinter/ptcracker/blob/master/ptcracker.config)，下面是每一项解释：
 
 - maxRate: 最大上传速度，默认 10240 KB/s
 - minRate: 最小上传速度，默认 1024 KB/s
@@ -38,6 +38,8 @@ PT-Cracker在`maxRate`和`minRate` (KB/s)之间随机选择一个速度，每隔
 
 注意，`torrentsDir`支持子目录。
 
+PT-Cracker在`maxRate`和`minRate` (KB/s)之间随机选择一个速度，每隔`interval`秒发送一次包含按照这个速度这段时间的上传量。为了做特定资源的欺骗，所以需要从PT网站上下载`.torrent`文件，将下载的文件放到｀torrentsDir`目录下。当该目录下有超过10个文件时随机选择10个文件使用。
+
 ## FAQ
 
 1. 必须使用我的帐户下载的Torrent文件吗？
@@ -46,8 +48,8 @@ PT-Cracker在`maxRate`和`minRate` (KB/s)之间随机选择一个速度，每隔
 
 ## 问题
 
-请在 Github issues 中提出，如果是使用过程中问题，最好附带相关部分的日志。
+请在 [Github issues](https://github.com/hoverwinter/ptcracker/issues) 中提出，如果是使用过程中问题，最好附带相关部分的日志。
 
 ## 许可
 
-Apache License, Version 2.0 
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
